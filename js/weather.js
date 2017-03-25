@@ -22,9 +22,18 @@ var shortWeather = weather.consolidated_weather[0];
 cityName.innerText = weather.title;
 time.innerText = weather.time;
 
-var select = document.querySelector("#city")
+var select = document.querySelector("#city");
 
 select.onchange = function() {
-	var townName = select.value
-	alert(townName);
-}
+	var townName = select.value;
+	var xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function() {
+    	if (this.readyState == 4 && this.status == 200) {
+       // Typical action to be performed when the document is ready:
+       document.getElementById("demo").innerHTML = xhttp.responseText;
+   		 }
+	};
+	xhttp.open("GET", "filename", true);
+	xhttp.send();	
+};
+
