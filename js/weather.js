@@ -33,7 +33,7 @@ select.onchange = function() {
        document.getElementById("demo").innerHTML = xhttp.responseText;
    		 }
 	};
-	xhttp.open("GET", "filename", true);
+	xhttp.open("GET", "https://intense-beach-78744.herokuapp.com/?city=kiev", true);
 	xhttp.send();	
 };
 
