@@ -26,14 +26,14 @@ var select = document.querySelector("#city");
 
 select.onchange = function() {
 	var townName = select.value;
+
 	var xhttp = new XMLHttpRequest();
 	xhttp.onreadystatechange = function() {
-    	if (this.readyState == 4 && this.status == 200) {
-       // Typical action to be performed when the document is ready:
-       document.getElementById("demo").innerHTML = xhttp.responseText;
-   		 }
+    	if (this.readyState == 4 && this.status == 200) {  		
+       
+   		 } 
 	};
-	xhttp.open("GET", "https://intense-beach-78744.herokuapp.com/?city=kiev", true);
+	xhttp.open("GET", "https://intense-beach-78744.herokuapp.com/?city= " + townName, true);
 	xhttp.send();	
 };
 
