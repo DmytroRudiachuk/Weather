@@ -32,7 +32,12 @@ select.onchange = function() {
 			wind_speed.innerText = response.current.wind_kph;
 
 			cityName.innerText = response.location.name;
-			time.innerText = response.location.localtime;     
+			time.innerText = response.location.localtime; 
+
+			weatherIconsePlaceholders.forEach(function(img){
+				img.setAttribute("src", "http:" + response.current.condition.icon)    
+
+			})
    		 }
 	};
 	xhttp.open("GET", "https://intense-beach-78744.herokuapp.com/?city= " + townName, true);
